@@ -12,6 +12,7 @@ import About from './components/About';
 import Teachers from './components/Teachers';
 import Courses from './components/Courses';
 import NotFound from './components/NotFound';
+import Featured from './components/Featured';
 
 class App extends Component {
   render() {
@@ -22,7 +23,8 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/about" component={About} />
-                    <Route path="/teachers" component={Teachers} />
+                    <Route exact path="/teachers" component={Teachers} />
+                    <Route path="/teachers/:topic/:fname-:lname" component={Featured} />
                     <Route path="/courses" component={Courses} />
                     <Route component={NotFound} />
                 </Switch>
