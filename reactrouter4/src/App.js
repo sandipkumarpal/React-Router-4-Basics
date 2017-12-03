@@ -11,6 +11,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Teachers from './components/Teachers';
 import Courses from './components/Courses';
+import NotFound from './components/NotFound';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
                     <Route path="/about" component={About} />
                     <Route path="/teachers" component={Teachers} />
                     <Route path="/courses" component={Courses} />
+                    <Route component={NotFound} />
                 </Switch>
             </div>
         </BrowserRouter>
