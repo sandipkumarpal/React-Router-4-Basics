@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import Course from './Course';
 
 function CourseContainer(props) {
@@ -17,5 +17,13 @@ function CourseContainer(props) {
       </div>
   );
 }
+
+CourseContainer.defualtProps = {
+  data: {},
+};
+
+CourseContainer.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export default CourseContainer;

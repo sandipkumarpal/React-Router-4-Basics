@@ -3,6 +3,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
+  handleSubmit(e) {
+    e.preventDefault();
+    const teacheName = this.name.value;
+    const teacherTopic = this.topic.value;
+    const path = `teachers/${teacherTopic}/${teacheName}`;
+    this.props.history.push(path);
+  }
+
   render() {
     return (
         <div className="main-content home">
@@ -20,7 +28,12 @@ class Home extends Component {
               on web technology so you will never fall behind.
             </p>
             <hr />
-            <Link to="teachers/HTML/Sandip-pal">Sandip Pal</Link>
+            <h3>FEatured Teacher</h3>
+            <form onSubmit={e => this.handleSubmit(e)}>
+                <input type="text" placeholder="Name" ref={input => this.name = input} />
+                <input type="text" placeholder="Topic" ref={input => this.topic = input} />
+                <button type="submit">Go!</button>
+            </form>
         </div>
     );
   }

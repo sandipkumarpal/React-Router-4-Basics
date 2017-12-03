@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { Switch,
   Route,
   NavLink,
@@ -44,5 +44,13 @@ const Courses = ({ match }) => (
         </Switch>
     </div>
 );
+
+Courses.defualtProps = {
+  match: {},
+};
+
+Courses.propTypes = {
+  match: PropTypes.object.isRequired,
+};
 
 export default Courses;
